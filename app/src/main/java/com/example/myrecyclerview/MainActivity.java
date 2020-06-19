@@ -22,13 +22,18 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView mRv = findViewById(R.id.linearRv);
 
         //线性布局
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        mRv.setLayoutManager(linearLayoutManager);
+//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+//        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+//        mRv.setLayoutManager(linearLayoutManager);
+
+        //自定义布线性布局管理器
+        CustomLayoutManager customLayoutManager = new CustomLayoutManager();
+        mRv.setLayoutManager(customLayoutManager);
+
 //        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this, LinearLayoutManager.VERTICAL);
 //        mRv.addItemDecoration(dividerItemDecoration);
-        LinearItemDecoration2 linearItemDecoration = new LinearItemDecoration2(this);
-        mRv.addItemDecoration(linearItemDecoration);
+//        LinearItemDecoration2 linearItemDecoration = new LinearItemDecoration2(this);
+//        mRv.addItemDecoration(linearItemDecoration);
 
         //如果是横向滚动，后面的数值表示的是几行，如果是竖向滚动，后面的数值表示的是几列
 //        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 5);
@@ -39,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 //        StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(5, StaggeredGridLayoutManager.VERTICAL);
 //        mRv.setLayoutManager(layoutManager);
 
-        RecyclerAdapter adapter = new RecyclerAdapter(this, mDatas);
+        LayoutRecyclerAdapter adapter = new LayoutRecyclerAdapter(this, mDatas);
         mRv.setAdapter(adapter);
     }
 

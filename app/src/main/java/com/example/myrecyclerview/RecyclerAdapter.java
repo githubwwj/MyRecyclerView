@@ -45,7 +45,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         if (holder instanceof SectionHolder) {
             SectionHolder sectionHolder = (SectionHolder) holder;
-            sectionHolder.mSectionTv.setText("第 " + ((position / SECTION_ITEM_NUM) + 1) + " 组");
+            sectionHolder.mSectionTv.setText("第 " + position / SECTION_ITEM_NUM + " 组");
         } else if (holder instanceof NormalHolder) {
             NormalHolder normalHolder = (NormalHolder) holder;
             normalHolder.mTV.setText(mDatas.get(position));
