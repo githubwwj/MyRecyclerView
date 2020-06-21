@@ -29,14 +29,14 @@ public class LayoutRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         mCreatedHolder++;
-//        Log.d("TAG", "-----onCreateViewHolder  num:" + mCreatedHolder);
+        Log.d("TAG", "-----onCreateViewHolder  num:" + mCreatedHolder);
         LayoutInflater inflater = LayoutInflater.from(mContext);
         return new NormalHolder(inflater.inflate(R.layout.item_layout, parent, false));
     }
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-//        Log.d("TAG", "--------onBindViewHolder");
+        Log.d("TAG", "--------onBindViewHolder");
         NormalHolder normalHolder = (NormalHolder) holder;
         normalHolder.mTV.setText(mDatas.get(position));
     }
